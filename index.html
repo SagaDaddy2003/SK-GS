@@ -27,29 +27,48 @@
   <h2 class="section-title">🏭 Наши фабрики</h2>
 
   <section class="gallery">
+    <div class="img-card">
+      <img src="images/images1.jpg" alt="Фабрика 1">
+      <p>🏠 Главная база</p>
+    </div>
 
-  <div class="img-card">
-    <img src="images/images1.jpg" alt="Фабрика 1">
-    <p>🏭 Главная база</p>
-  </div>
+    <div class="img-card">
+      <img src="images/images2.jpg" alt="Фабрика 2">
+      <p>⚙ Конвейерный узел</p>
+    </div>
 
-  <div class="img-card">
-    <img src="images/images2.jpg" alt="Фабрика 2">
-    <p>🔗 Конвейерный узел</p>
-  </div>
-
-  <div class="img-card">
-    <img src="images/images3.jpg" alt="Фабрика 3">
-    <p>⚡ Производство энергии</p>
-  </div>
-</section>
-
+    <div class="img-card">
+      <img src="images/images3.jpg" alt="Фабрика 3">
+      <p>⚡ Производство энергии</p>
+    </div>
+  </section>
 
 </main>
 
 <footer>
   © 2025 SK&GS
 </footer>
+
+<!-- FULLSCREEN VIEWER -->
+<div id="viewer">
+  <img id="viewer-img">
+</div>
+
+<script>
+  const viewer = document.getElementById("viewer");
+  const viewerImg = document.getElementById("viewer-img");
+
+  document.querySelectorAll(".img-card img").forEach(img => {
+    img.addEventListener("click", () => {
+      viewerImg.src = img.src;
+      viewer.classList.add("show");
+    });
+  });
+
+  viewer.addEventListener("click", () => {
+    viewer.classList.remove("show");
+  });
+</script>
 
 </body>
 </html>
